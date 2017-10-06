@@ -5,16 +5,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class Korttipakka {
-
+    
     private List<Kortti> Korttipakka = new ArrayList<Kortti>();
+    int lkm = 0;
 
-    public Korttipakka() {
+    public Korttipakka(int lkm) {
 
-        for (int i = 1; i <= 13; i++) {
-            Korttipakka.add(new Kortti(i, "Hertta"));
-            Korttipakka.add(new Kortti(i, "Pata"));
-            Korttipakka.add(new Kortti(i, "Risti"));
-            Korttipakka.add(new Kortti(i, "Ruutu"));
+        for (int j = 0; j <= lkm; j++) {
+            for (int i = 1; i <= 13; i++) {
+                Korttipakka.add(new Kortti(i, "Hertta"));
+                Korttipakka.add(new Kortti(i, "Pata"));
+                Korttipakka.add(new Kortti(i, "Risti"));
+                Korttipakka.add(new Kortti(i, "Ruutu"));
+            }
         }
     }
 
@@ -22,9 +25,8 @@ public class Korttipakka {
         Kortti kortti = Korttipakka.get(0);
         Korttipakka.remove(0);
         return kortti;
-
     }
-    
+
     public void tulostaPakka() {
         System.out.println(Korttipakka);
     }
